@@ -1,2 +1,2 @@
-# toteat-example
+# Toteat-example
 Public example for Toteat
