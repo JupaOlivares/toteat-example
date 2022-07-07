@@ -1,0 +1,71 @@
+<template>
+  <div id="app">
+    <div class="side"></div>
+    <div class="main">
+      <h1> Dashboard "La pikada de la esquina" </h1>
+      <hr>
+      <h2> Últimas Transacciones </h2>
+      <div class="components-row-1">
+        <OrderTable :sales="sales"> </OrderTable>
+              <hr>
+        <CalendarProducts> </CalendarProducts>
+      </div>
+
+    </div>
+    <div class="side"></div>
+  </div>
+</template>
+
+<script>
+
+import OrderTable from './components/OrderTable'
+import CalendarProducts from './components/CalendarProducts'
+import sales from "./data/ventas.json";
+
+export default {
+  name: 'App',
+  components: {
+    OrderTable,
+    CalendarProducts
+  },
+  data: function () {
+    return {
+      sales: sales
+    }
+  }}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  border: solid 5px;
+  border-radius: 15px;
+}
+.side{
+  flex-grow: 1;
+}
+
+.main{
+  margin: 10px;
+  flex-grow: 8;
+  display: flex;
+  flex-direction: column;
+}
+h1{
+  text-align: left;
+  font-size: 40px;
+  margin: 5%;
+}
+h2{
+  text-align: left;
+  font-size: 30px;
+  margin: 5% 5%;
+}
+</style>
