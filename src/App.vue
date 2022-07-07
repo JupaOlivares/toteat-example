@@ -4,6 +4,9 @@
     <div class="main">
       <h1> Dashboard "La pikada de la esquina" </h1>
       <hr>
+      <h2> Estadisticas </h2>
+        <StatisticsPanel :sales="sales"></StatisticsPanel>
+      <hr>
       <h2> Últimas Transacciones </h2>
       <div class="components-row-1">
         <OrderTable :sales="sales"> </OrderTable>
@@ -20,13 +23,15 @@
 
 import OrderTable from './components/OrderTable'
 import CalendarProducts from './components/CalendarProducts'
-import sales from "./data/ventas.json";
+import sales from "./data/ventas.json"
+import StatisticsPanel from './components/StatisticsPanel'
 
 export default {
   name: 'App',
   components: {
     OrderTable,
-    CalendarProducts
+    CalendarProducts,
+    StatisticsPanel
   },
   data: function () {
     return {
