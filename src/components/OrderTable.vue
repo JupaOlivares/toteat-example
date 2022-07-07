@@ -54,13 +54,13 @@
                     sortable: true
                 },
                 {
-                    key: 'id',
-                    label: 'ID'
-                },
-                {
                     key: 'total',
                     label: 'Total',
                     sortable: true
+                },
+                {
+                    key: 'id',
+                    label: 'ID'
                 },
                 { key: 'actions', 
                 label: 'Mostrar' }

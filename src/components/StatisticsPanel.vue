@@ -16,7 +16,12 @@
             <h3> {{ allWeekCash}} </h3>
         </li>
         <li class="big">
-            <h1> {{  }} </h1>
+            <h3> Principales Ventas </h3> 
+            <ul id="top-products">
+              <h5 v-for="(value, key) in topProducts" :key=key>
+                {{ key+1 }}.- {{ value.category }} : {{ value.quantity}}
+              </h5>
+            </ul>
         </li>
 
         <b-tooltip target="total-sales"> Credito: {{creditTotal}} <br> Efectivo: {{cashTotal}} <br> Otro: {{4360 - creditTotal - cashTotal}}</b-tooltip>
@@ -110,6 +115,24 @@ export default {
     }).reduce((accumulator, object) => {
          return accumulator + object.total;
     }, 0))
+    },
+    topProducts: function () {
+        var products = this.sales.reduce((accumulator, object) => {
+            object.products.forEach(item => {
+                if (accumulator[item.category]) {
+                    accumulator[item.category].quantity += item.quantity
+                } else {
+                    accumulator[item.category] = {
+                        quantity: item.quantity,
+                        category: item.category.toString()
+                    }
+                }
+            })
+            return accumulator
+        }, {})
+        return Object.values(products).sort((a, b) => {
+            return b.quantity - a.quantity
+        })
     }
 }
 }
@@ -154,5 +177,12 @@ h1{
   height: 200px;
   color: white;
   flex-grow: 4;
+  text-align: center;
+}
+
+#top-products{
+  list-style: none;
+  text-align: center;
+  margin-top: 20px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="app">
     <div class="side"></div>
     <div class="main">
-      <h1> Dashboard "La pikada de la esquina" </h1>
+      <h1> Dashboard "La Pikada De La Esquina" </h1>
       <hr>
       <h2> Estadisticas </h2>
         <StatisticsPanel :sales="sales"></StatisticsPanel>
@@ -11,7 +11,7 @@
       <div class="components-row-1">
         <OrderTable :sales="sales"> </OrderTable>
               <hr>
-        <CalendarProducts> </CalendarProducts>
+        <MonthlyData :sales="sales"> </MonthlyData>
       </div>
 
     </div>
@@ -22,16 +22,16 @@
 <script>
 
 import OrderTable from './components/OrderTable'
-import CalendarProducts from './components/CalendarProducts'
 import sales from "./data/ventas.json"
 import StatisticsPanel from './components/StatisticsPanel'
+import MonthlyData from './components/MonthlyData'
 
 export default {
   name: 'App',
   components: {
     OrderTable,
-    CalendarProducts,
-    StatisticsPanel
+    StatisticsPanel,
+    MonthlyData
   },
   data: function () {
     return {
@@ -51,7 +51,6 @@ export default {
   display: flex;
   flex-direction: row;
   border: solid 5px;
-  border-radius: 15px;
 }
 .side{
   flex-grow: 1;
