@@ -2,7 +2,7 @@
   <div>
     <b-table id="my-table" striped hover :fields="fields" :items="sales" :per-page="perPage" :current-page="currentPage">
     <template #cell(actions)="row">
-        <b-button size="sm" @click="info(row.products, row.index, $event.target)" class="mr-1">
+        <b-button size="sm" @click="info(row.products, row.index, $event.target)" class="mr-1" id="show-button">
           Mostrar Productos
         </b-button>
     </template>
@@ -12,6 +12,7 @@
       :total-rows="rows"
       :per-page="perPage"
       aria-controls="my-table"
+      id="pagination-pages"
     ></b-pagination>
 
     <b-modal :id="infoModal.id" :title="infoModal.title" ok-only @hide="resetInfoModal" class="product-modal">
@@ -100,7 +101,11 @@
 </script>
 
 <style scoped>
-    .product{
-        margin:5%;
-    }
+#show-button {
+  background: gray;
+}
+.product{
+    margin:5%;
+}
+
 </style>

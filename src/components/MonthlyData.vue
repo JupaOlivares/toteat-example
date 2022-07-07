@@ -2,11 +2,11 @@
     <div class="monthly-data-panel">
         <h2>Tu 2019 Hasta ahora!</h2>
         <h5> Enero </h5>
-        <b-progress :value="januarySales" :max="max" show-value class="mb-3" id="first"></b-progress>
+        <b-progress :value="januarySales" :max="max" show-value variant="secondary" class="mb-3" id="first"></b-progress>
         <h5> Febrero </h5>
-        <b-progress :value="februarySales" :max="max" show-value class="mb-3" id="second"></b-progress>
+        <b-progress :value="februarySales" :max="max" show-value variant="secondary" class="mb-3" id="second"></b-progress>
         <h5> Marzo </h5>
-        <b-progress :value="marchSales" :max="max" show-value class="mb-3" id="third"></b-progress>
+        <b-progress :value="marchSales" :max="max" show-value variant="secondary" class="mb-3" id="third"></b-progress>
         <b-tooltip target="first"> Numero de ventas: {{january}} </b-tooltip>
         <b-tooltip target="second"> Numero de ventas: {{february}} </b-tooltip>
         <b-tooltip target="third"> Numero de ventas: {{march}} </b-tooltip>
@@ -79,4 +79,5 @@ export default {
 h5{
     text-align: left;
 }
+
 </style>

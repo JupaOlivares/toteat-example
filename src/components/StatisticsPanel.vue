@@ -148,6 +148,7 @@ export default {
   padding: 0;
   margin: 0;
   list-style: none;
+  
 }
 
 .flex-item {
@@ -182,7 +183,10 @@ h1{
 
 #top-products{
   list-style: none;
-  text-align: center;
-  margin-top: 20px;
+  text-align: left;
+  padding: 0;
+  padding-bottom: 5%;
+  margin: 0% 0% 5% 5%;
+  list-style: none;
 }
 </style>

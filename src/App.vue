@@ -50,7 +50,6 @@ export default {
   margin-top: 60px;
   display: flex;
   flex-direction: row;
-  border: solid 5px;
 }
 .side{
   flex-grow: 1;
